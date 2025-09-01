@@ -2,10 +2,7 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  // exclude index page 
-  if (request.nextUrl.pathname === "/") {
-    return NextResponse.next()
-  }
+  
   
   // Add CORS headers for API routes
   if (request.nextUrl.pathname.startsWith("/api/")) {
@@ -21,7 +18,7 @@ export function middleware(request: NextRequest) {
       return new Response(null, { status: 200, headers: response.headers })
     }
 
-    console.log("check", response)
+    
 
     return response
   }
