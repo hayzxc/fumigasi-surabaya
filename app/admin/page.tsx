@@ -172,16 +172,7 @@ export default function AdminDashboard() {
         fileUrl: fileData?.url,
         fileName: fileData?.fileName,
         fileSize: fileData?.fileSize,
-        containerNumber:
-          serviceType === "FUMIGATION" ? containerNumber : undefined,
-        noticeId: serviceType === "FUMIGATION" ? noticeId : undefined,
-        woNumber: serviceType === "FUMIGATION" ? woNumber : undefined,
-        gassingTime:
-          serviceType === "FUMIGATION"
-            ? gassingTime
-              ? new Date(gassingTime)
-              : undefined
-            : undefined,
+      
       };
 
       const newCertFromApi = await createCertificate(newCertData);

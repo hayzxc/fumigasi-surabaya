@@ -4,7 +4,7 @@ import { UTApi } from "uploadthing/server";
 
  const utapi = new UTApi();
 
-export const POST = withAdminAuth(async (request) => {
+export const POST = withAdminAuth(async     (request) => {
   const data = await request.formData();
   const file: File | null = data.get("file") as unknown as File;
 
